@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <style>
+            #main{
+                background-color: black;
+                width:30%;
+                height:fit-content;
+                justify-content: center;
+                align-items: center;
+                margin-left: 35%;
+                margin-top: 5cm;
+            }
+            input{
+                width: 20%;
+                height: 30%;
+                font-size: 200%;
+                margin : 6px;
+            }
+            #txt{
+                background-color: aliceblue;
+                width : 96%; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <form name="f">
+                <input type="text" placeholder="0" name="txt" id="txt"> <br>
+                <input type="button" value="1" onclick="f.txt.value+='1'">
+                <input type="button" value="2" onclick="f.txt.value+='2'">
+                <input type="button" value="3" onclick="f.txt.value+='3'">
+                <input type="button" value="+" onclick="add()">
+                <br>
+                <input type="button" value="4" onclick="f.txt.value+='4'">
+                <input type="button" value="5" onclick="f.txt.value+='5'">
+                <input type="button" value="6" onclick="f.txt.value+='6'">
+                <input type="button" value="-" onclick="sub()">
+                <br>
+                <input type="button" value="7" onclick="f.txt.value+='7'">
+                <input type="button" value="8" onclick="f.txt.value+='8'">
+                <input type="button" value="9" onclick="f.txt.value+='9'">
+                <input type="button" value="x" onclick="mul()">
+                <br>
+                <input type="button" value="c" onclick="f.txt.value=''">
+                <input type="button" value="0" onclick="f.txt.value+='0'">
+                <input type="button" value="=" onclick="f.txt.value=eval(f.txt.value)">
+                <input type="button" value="/" onclick="div()">
+            </form>
+        </div>
+
+        <script>
+
+            function add()
+            {
+                var x=0 , y=0;
+                x = f.txt.value;
+                y = x.charAt(x.length-1);
+                if( y=='+' || y=='*' || y=='/' || y=='-' )
+                {
+                    f.txt.value=x.substring(0,x.length-1);
+                    f.txt.value+='+';
+                }
+                else
+                {
+                    f.txt.value+='+';
+                }
+            }
+
+            function sub()
+            {
+                var x=0 , y=0;
+                x = f.txt.value;
+                y = x.charAt(x.length-1);
+                if( y=='+' || y=='*' || y=='/' || y=='-' )
+                {
+                    f.txt.value=x.substring(0,x.length-1);
+                    f.txt.value+='-';
+                }
+                else
+                {
+                    f.txt.value+='-';
+                }
+            }
+
+            function div()
+            {
+                var x=0 , y=0;
+                x = f.txt.value;
+                y = x.charAt(x.length-1);
+                if( y=='+' || y=='*' || y=='/' || y=='-' )
+                {
+                    f.txt.value=x.substring(0,x.length-1);
+                    f.txt.value+='/';
+                }
+                else
+                {
+                    f.txt.value+='/';
+                }
+            }
+
+            function mul()
+            {
+                var x=0 , y=0;
+                x = f.txt.value;
+                y = x.charAt(x.length-1);
+                if( y=='+' || y=='*' || y=='/' || y=='-' )
+                {
+                    f.txt.value=x.substring(0,x.length-1);
+                    f.txt.value+='*';
+                }
+                else
+                {
+                    f.txt.value+='*';
+                }
+            }
+
+
+        </script>
+
+    </body>
+</html>
